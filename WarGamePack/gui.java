@@ -28,8 +28,8 @@ public class gui {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(500,500);
 		frame.pack();
-//		frame.getContentPane().add(firstButton); //Adds button to content pane of frame
-//		frame.getContentPane().add(secondButton);
+
+		
 		frame.setVisible(true);
 		
 	}
