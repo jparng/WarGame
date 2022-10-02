@@ -74,7 +74,7 @@ public class gui {
 				firstButton.setVisible(true);
 				secondButton.setVisible(true);
 				title.setVisible(true);
-				draw.setVisible(true);
+				draw.setVisible(false);
 			}
 		});
 	
