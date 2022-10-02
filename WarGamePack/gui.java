@@ -44,7 +44,6 @@ public class gui {
 
 		frame.setTitle("Card Game of War");
 		frame.add(panel, BorderLayout.CENTER);
-		frame.add(title, BorderLayout.CENTER);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(1000,1000);
 		frame.setVisible(true);
