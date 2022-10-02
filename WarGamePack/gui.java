@@ -2,6 +2,7 @@ package WarGamePack;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.lang.Object.*;
 
 
 
@@ -19,7 +20,13 @@ public class gui {
 		
 		//Title of game
 		title.setText("Card Game of War!");
-		title.setFont(new Font("Arial", Font.PLAIN, 50));
+		title.setFont(new Font("Arial", Font.BOLD, 50));
+
+
+		//adds background image -Ryan M.
+		JLabel bg = new JLabel();
+		ImageIcon img = new ImageIcon("bg.png");
+		bg = new JLabel(" ",img,JLabel.CENTER);
 		
 		
 		
@@ -30,8 +37,7 @@ public class gui {
 		panel.add(secondButton);
 		panel.add(draw);
 		panel.add(resetBut);
-		
-		
+
 		
 		
 		
@@ -41,11 +47,12 @@ public class gui {
 //		draw.setBounds(170, 170, 170, 50);
 //		resetBut.setBounds(200,200,200,50); 
 		
-
+		frame.add(bg);
+		frame.pack();
 		frame.setTitle("Card Game of War");
 		frame.add(panel, BorderLayout.CENTER);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(1000,1000);
+		frame.setSize(1280,720); //currently set to 720p windowed as to still allow room on screen - Ryan M.
 		frame.setVisible(true);
 		
 		//if 1p or 2p is clicked, hide buttons and create second layout with decks, draw buttons, win counter, music toggle, and speed toggle
@@ -79,7 +86,5 @@ public class gui {
 		});
 	
 	}
-	
-
 
 }
