@@ -1,43 +1,86 @@
 package WarGamePack;
-import java.awt.BorderLayout;
-import java.awt.Font;
-import java.awt.GridLayout;
-
+import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
+
+
+
 public class gui {
 	
 	public gui() {
 		JFrame frame = new JFrame();
-		
 		JPanel panel = new JPanel();
-		
 		JButton firstButton = new JButton("1P");
 		JButton secondButton = new JButton("2P");
-		JLabel label = new JLabel();
+		JButton resetBut = new JButton("Reset");
+		JButton draw = new JButton("Draw");
+		draw.setVisible(false);
+		JLabel title = new JLabel();
 		
-		label.setText("Card Game of War!");
-		label.setFont(new Font("Arial", Font.PLAIN, 50));
+		//Title of game
+		title.setText("Card Game of War!");
+		title.setFont(new Font("Arial", Font.PLAIN, 50));
 		
 		
-		panel.setBorder(BorderFactory.createEmptyBorder(300,300,150,300));		//Creates border for interface Top, left, bottom, right
 		
-		panel.add(label);
+	
+		//adds Title,buttons, etc
+		panel.add(title);
 		panel.add(firstButton);
 		panel.add(secondButton);
-		panel.setLayout(new GridLayout(10, 5));
+		panel.add(draw);
+		panel.add(resetBut);
+		
+		
+		
+		
+		
+		//moves right, moves down, increases width, increases height for setting bounds
+//		firstButton.setBounds(160,150,150,50);
+//		secondButton.setBounds(240, 250, 200, 50); 
+//		draw.setBounds(170, 170, 170, 50);
+//		resetBut.setBounds(200,200,200,50); 
 		
 
 		frame.setTitle("Card Game of War");
 		frame.add(panel, BorderLayout.CENTER);
+		frame.add(title, BorderLayout.CENTER);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(500,500);
-		frame.pack();
-
+		frame.setSize(1000,1000);
 		frame.setVisible(true);
 		
-		
 		//if 1p or 2p is clicked, hide buttons and create second layout with decks, draw buttons, win counter, music toggle, and speed toggle
+		firstButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				firstButton.setVisible(false);
+				secondButton.setVisible(false);
+				title.setVisible(false);
+				draw.setVisible(true);
+			}
+		});
 		
+		//2 player button
+		secondButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				firstButton.setVisible(false);
+				secondButton.setVisible(false);
+				title.setVisible(false);
+				draw.setVisible(true);
+			}
+		});
+		
+		//Resets all buttons and title 
+		resetBut.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				firstButton.setVisible(true);
+				secondButton.setVisible(true);
+				title.setVisible(true);
+				draw.setVisible(true);
+			}
+		});
+	
 	}
 	
+
+
 }
