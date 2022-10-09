@@ -14,3 +14,8 @@ Game of War card game
 Drafts/Documentation : https://docs.google.com/document/d/1Xm4xP4JERc0tksHb2V_Lq_JcaLcC6sVMxiI7XfCdvZk/edit?usp=sharing
 
 Scope Statement/Ideas: https://docs.google.com/document/d/1RGqWkIkoDaJFebfCT9eyadPfOhR0wz3XQD8X0En-K1o/edit?usp=sharing
+
+
+# Start of the game
+
+![image](https://user-images.githubusercontent.com/59073672/194780583-c417ae34-c385-48e9-b09c-4f049f943709.png)
