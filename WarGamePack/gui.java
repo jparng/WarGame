@@ -10,50 +10,66 @@ public class gui {
 	
 	public gui() {
 		JFrame frame = new JFrame();
+		frame.setResizable(false);
+		frame.setBounds(0, 0, 1280, 720);
+		
+		//Initialize panel and panel layout
 		JPanel panel = new JPanel();
-		JButton firstButton = new JButton("1P");
+		panel.setBounds(0, 0, 1280, 720);
+		
+		
+		//adds background image - Ryan M.
+		ImageIcon backGround;
+		backGround = new ImageIcon(this.getClass().getResource("/resources/bg.png"));
 		JButton secondButton = new JButton("2P");
+		secondButton.setFont(new Font("Arial", Font.PLAIN, 14));
+		secondButton.setBounds(641, 322, 165, 76);
 		JButton resetBut = new JButton("Reset");
-		JButton draw = new JButton("Draw");
-		draw.setVisible(false);
-		JLabel title = new JLabel();
+		resetBut.setVisible(false);
+		resetBut.setBounds(1151, 11, 91, 35);
+		panel.setLayout(null);
 		
-		//Title of game
-		title.setText("Card Game of War!");
-		title.setFont(new Font("Arial", Font.BOLD, 50));
+		
 
+		
 
-		//adds background image -Ryan M.
-		JLabel bg = new JLabel();
-		ImageIcon img = new ImageIcon("bg.png");
-		bg = new JLabel(" ",img,JLabel.CENTER);
 		
 		
-		
-	
-		//adds Title,buttons, etc
-		panel.add(title);
+		JButton firstButton = new JButton("1P");
+		firstButton.setFont(new Font("Arial", Font.PLAIN, 14));
+		firstButton.setBounds(408, 322, 165, 76);
 		panel.add(firstButton);
+		
+		
+
+		
+
 		panel.add(secondButton);
-		panel.add(draw);
 		panel.add(resetBut);
 
 		
 		
 		
-		//moves right, moves down, increases width, increases height for setting bounds
-//		firstButton.setBounds(160,150,150,50);
-//		secondButton.setBounds(240, 250, 200, 50); 
-//		draw.setBounds(170, 170, 170, 50);
-//		resetBut.setBounds(200,200,200,50); 
 		
-		frame.add(bg);
-		frame.pack();
+		
 		frame.setTitle("Card Game of War");
-		frame.add(panel, BorderLayout.CENTER);
+		frame.getContentPane().setLayout(null);
+		frame.getContentPane().add(panel);
+		JButton draw = new JButton("Draw");
+		draw.setBounds(533, 524, 177, 82);
+		draw.setVisible(false);
+		panel.add(draw);
+		
+		JLabel title = new JLabel("Game of War!");
+		title.setHorizontalAlignment(SwingConstants.CENTER);
+		title.setFont(new Font("Arial", Font.PLAIN, 50));
+		title.setBounds(472, 81, 316, 59);
+		panel.add(title);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(1280,720); //currently set to 720p windowed as to still allow room on screen - Ryan M.
+		//frame.setSize(258,77);
 		frame.setVisible(true);
+		
+		
 		
 		//if 1p or 2p is clicked, hide buttons and create second layout with decks, draw buttons, win counter, music toggle, and speed toggle
 		firstButton.addActionListener(new ActionListener() {
@@ -62,6 +78,8 @@ public class gui {
 				secondButton.setVisible(false);
 				title.setVisible(false);
 				draw.setVisible(true);
+				resetBut.setVisible(true);
+				
 			}
 		});
 		
@@ -72,6 +90,7 @@ public class gui {
 				secondButton.setVisible(false);
 				title.setVisible(false);
 				draw.setVisible(true);
+				resetBut.setVisible(true);
 			}
 		});
 		
@@ -82,9 +101,11 @@ public class gui {
 				secondButton.setVisible(true);
 				title.setVisible(true);
 				draw.setVisible(false);
+				resetBut.setVisible(false);
 			}
 		});
 	
 	}
 
 }
+
