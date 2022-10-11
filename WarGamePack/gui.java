@@ -19,8 +19,7 @@ public class gui {
 		
 		
 		//adds background image - Ryan M.
-//		ImageIcon backGround;
-//		backGround = new ImageIcon(this.getClass().getResource("/resources/bg.png"));
+
 		JButton secondButton = new JButton("2P");
 		secondButton.setFont(new Font("Arial", Font.PLAIN, 14));
 		secondButton.setBounds(641, 322, 165, 76);
@@ -66,12 +65,25 @@ public class gui {
 		title.setBounds(472, 81, 316, 59);
 		panel.add(title);
 		
-		JLabel backGround1 = new JLabel("New label");
+		JLabel backGround1 = new JLabel("");
 		backGround1.setIcon(new ImageIcon("C:\\Users\\Jerry Parng\\eclipse-workspace\\WarGame\\bin\\resources\\bg.png"));
 		backGround1.setBounds(0, 1, 1270, 690);
 		panel.add(backGround1);
+		
+		JLabel backGround2 = new JLabel("");
+		backGround2.setIcon(new ImageIcon("C:\\Users\\Jerry Parng\\eclipse-workspace\\WarGame\\bin\\resources\\bg_1play.jpg"));
+		backGround2.setBounds(0, 0, 1270, 691);
+		panel.add(backGround2);
+		
+		JLabel backGround3 = new JLabel("");
+		backGround3.setIcon(new ImageIcon("C:\\Users\\Jerry Parng\\eclipse-workspace\\WarGame\\bin\\resources\\bg_2play.jpg"));
+		backGround3.setBounds(0, 1, 1270, 690);
+		panel.add(backGround3);
+	
+		backGround2.setVisible(false);
+		backGround3.setVisible(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//frame.setSize(258,77);
+
 		frame.setVisible(true);
 		
 		
@@ -84,7 +96,8 @@ public class gui {
 				title.setVisible(false);
 				draw.setVisible(true);
 				resetBut.setVisible(true);
-				
+				backGround1.setVisible(false);
+				backGround2.setVisible(true);
 			}
 		});
 		
@@ -96,6 +109,9 @@ public class gui {
 				title.setVisible(false);
 				draw.setVisible(true);
 				resetBut.setVisible(true);
+				backGround1.setVisible(false);
+				backGround2.setVisible(false);
+				backGround3.setVisible(true);
 			}
 		});
 		
@@ -107,10 +123,14 @@ public class gui {
 				title.setVisible(true);
 				draw.setVisible(false);
 				resetBut.setVisible(false);
+				backGround1.setVisible(true);
+				backGround2.setVisible(false);
+				backGround3.setVisible(false);
 			}
 		});
 	
 	}
 
 }
+
 
