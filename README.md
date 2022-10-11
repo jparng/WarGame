@@ -19,3 +19,15 @@ Scope Statement/Ideas: https://docs.google.com/document/d/1RGqWkIkoDaJFebfCT9eya
 # Start of the game
 
 ![image](https://user-images.githubusercontent.com/59073672/194780583-c417ae34-c385-48e9-b09c-4f049f943709.png)
+
+
+# Player 1 button is clicked
+
+![image](https://user-images.githubusercontent.com/59073672/194977049-8140e356-45b6-4fd7-a880-34678170befd.png)
+
+# Player 2 button is clicked
+
+![image](https://user-images.githubusercontent.com/59073672/194977103-8f1c6114-1cad-480d-9b63-e50eb9bdb95e.png)
+
+
+
