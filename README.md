@@ -30,4 +30,7 @@ Scope Statement/Ideas: https://docs.google.com/document/d/1RGqWkIkoDaJFebfCT9eya
 ![image](https://user-images.githubusercontent.com/59073672/194977103-8f1c6114-1cad-480d-9b63-e50eb9bdb95e.png)
 
 
+# Updated Interface
+
+![image](https://user-images.githubusercontent.com/59073672/196067372-07723db0-bdbe-4721-9496-5ecabb2c18c7.png)
 
