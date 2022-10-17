@@ -18,10 +18,23 @@ public class index extends javax.swing.JFrame {
 	public class Draw{
 		
 	}
+	
+	public class Reset{
+		
+	}
+	
+	
+	
+	
 	gui gui;
 	
 	public index() {
 		gui = new gui();
+	}
+	
+	public static void drawCard() {
+		//draws cards from the deck
+		
 	}
 	
 	public static void main(String args[]) {
