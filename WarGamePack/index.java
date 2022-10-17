@@ -2,6 +2,38 @@ package WarGamePack;
 
 
 public class index extends javax.swing.JFrame {
+	
+	cardNode head = null;
+	cardNode tail = null;
+	
+	class cardNode {
+		cardNode prev;
+		cardNode next;
+		int number; //must be 1-13
+		int suit; //must be 0-3
+		//possible image to link nodes to the assets?
+
+		public cardNode(int number, int suit) {
+			this.number = number;
+			this.suit = suit;
+		}
+	}
+	
+	public void addAtEnd(int number, int suit) {
+		cardNode newCard = new cardNode(number, suit);
+
+		if(head==null) {
+			head = tail = newCard;
+			head.prev = null;
+			tail.next = null;
+		}
+		else {
+			tail.next = newCard;
+			newCard.prev = tail;
+			tail = newCard;
+			tail.next = null;
+		}
+	}
 
 	public class Player1{
 		
