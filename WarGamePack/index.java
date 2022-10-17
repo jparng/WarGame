@@ -23,7 +23,8 @@ public class index extends javax.swing.JFrame {
 		cardNode newCard = new cardNode(number, suit);
 
 		if(head==null) {
-			head = tail = newCard;
+			head = newCard;
+			tail = newCard;
 			head.prev = null;
 			tail.next = null;
 		}
