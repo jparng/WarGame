@@ -36,7 +36,7 @@ public class index extends javax.swing.JFrame {
 		}
 	}
 	
-		public static class Card {
+	public static class Card {
 	    private int rank;
 	    private int suit;
 	    final BufferedImage image;
