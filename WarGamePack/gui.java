@@ -171,6 +171,8 @@ public class gui {
 				backGround3.setVisible(false);
 				mainDeck1.setVisible(false);
 				mainDeck2.setVisible(false);
+				
+				index.Reset();
 			}
 		});
 		
