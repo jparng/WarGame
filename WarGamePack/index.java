@@ -5,6 +5,8 @@ public class index extends javax.swing.JFrame {
 	
 	static LinkedList<Card> deck1 = new LinkedList<Card>();
 	
+	public static String[] cardDeck = Card.newDeck();
+	
 	cardNode head = null;
 	cardNode tail = null;
 	
