@@ -84,9 +84,20 @@ public class index extends javax.swing.JFrame {
 	public static void Reset() {
 		//Clears the cards from the deck
 		deck1.clear();
+		cardDeck = new String[0];
 		
-		System.out.println(deck1);
+		System.out.println("deck1: " + deck1);
+		
+		if(cardDeck.length < 0) {
+		for(int i = 0; i < cardDeck.length; i++) {
+			System.out.println("cardDeck: " + cardDeck[i]);
+			}
+		}
+		else {
+			System.out.println("cardDeck has been reset.");
+		}
 	}
+	
 	
 	public static void main(String args[]) {
 		
