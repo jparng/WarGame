@@ -3,9 +3,12 @@ package WarGamePack;
 
 public class index extends javax.swing.JFrame {
 	
-	static LinkedList<Card> deck1 = new LinkedList<Card>();
+	gui gui;
 	
-	public static String[] cardDeck = Card.newDeck();
+	public static LinkedList<Card> deck1 = new LinkedList<Card>();
+	public static LinkedList<Card> deck2 = new LinkedList<Card>();
+	public static LinkedList<Card> deck = new LinkedList<Card>();
+	
 	
 	cardNode head = null;
 	cardNode tail = null;
@@ -55,49 +58,52 @@ public class index extends javax.swing.JFrame {
 		
 	}
 	
-	public class Draw{
-		
-	}
-	
-	public class Reset{
-		
-	}
 	
 	
 	
-	
-	gui gui;
+
 	
 	public index() {
 		gui = new gui();
 	}
+	
+	public static void startGame() {
+		
+	try {
+		newDeck(deck);
+		firstDeck(deck1, deck);
+		secondDeck(deck2, deck);
+	    } catch (IOException e) {
+			// TODO Auto-generated catch block
+		e.printStackTrace();
+	    	}
+	System.out.println("Deck: " + deck);
+		
+	System.out.println("deck1: " + deck1);
+	System.out.println("deck1 count: " + deck1.size());
+		
+	System.out.println("deck2: " + deck2);
+	System.out.println("deck2 count: " + deck2.size());
+		
+	}
+	
+	
 	public static void drawCard() {
 		//draws cards from the deck
 		
-		try {
-			deck1.add(new Card(Card.ACE, Card.SPADES));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		System.out.println(deck1);
 	}
 	
 	public static void Reset() {
 		//Clears the cards from the deck
+		deck.clear();
 		deck1.clear();
-		cardDeck = new String[0];
+		deck2.clear();
+		
 		
 		System.out.println("deck1: " + deck1);
-		
-		if(cardDeck.length < 0) {
-		for(int i = 0; i < cardDeck.length; i++) {
-			System.out.println("cardDeck: " + cardDeck[i]);
-			}
-		}
-		else {
-			System.out.println("cardDeck has been reset.");
-		}
+		System.out.println("deck2: " + deck2);
+		System.out.println("full deck: " + deck);
+
 	}
 	
 	
