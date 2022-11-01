@@ -135,6 +135,8 @@ public class gui {
 				mainDeck1.setVisible(true);
 				mainDeck2.setVisible(true);
 				
+				//Initializes deck
+				index.startGame();
 			}
 		});
 		
@@ -152,6 +154,9 @@ public class gui {
 				backGround3.setVisible(true);
 				mainDeck1.setVisible(true);
 				mainDeck2.setVisible(true);
+				
+				//Initializes deck
+				index.startGame();
 			}
 		});
 		
