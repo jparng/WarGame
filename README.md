@@ -34,3 +34,8 @@ Scope Statement/Ideas: https://docs.google.com/document/d/1RGqWkIkoDaJFebfCT9eya
 
 ![image](https://user-images.githubusercontent.com/59073672/196067372-07723db0-bdbe-4721-9496-5ecabb2c18c7.png)
 
+# After Clicking Draw
+
+![image](https://user-images.githubusercontent.com/59073672/199155040-05ed70b8-fa22-4056-9aaf-65017a03ffbe.png)
+
+
