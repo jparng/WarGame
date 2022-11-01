@@ -3,8 +3,6 @@ package WarGamePack;
 
 public class index extends javax.swing.JFrame {
 	
-	gui gui;
-	
 	public static LinkedList<Card> deck1 = new LinkedList<Card>();
 	public static LinkedList<Card> deck2 = new LinkedList<Card>();
 	public static LinkedList<Card> deck = new LinkedList<Card>();
@@ -147,11 +145,7 @@ public class index extends javax.swing.JFrame {
 	
 	public static void main(String args[]) {
 		
-		java.awt.EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				new index().setVisible(true);
-			}
-		});
+		new gui();
 		
 	}
 }
