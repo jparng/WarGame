@@ -6,6 +6,8 @@ public class index extends javax.swing.JFrame {
 	public static LinkedList<Card> deck1 = new LinkedList<Card>();
 	public static LinkedList<Card> deck2 = new LinkedList<Card>();
 	public static LinkedList<Card> deck = new LinkedList<Card>();
+	static Card card1;
+	static Card card2;
 	
 	
 	cardNode head = null;
@@ -126,6 +128,13 @@ public class index extends javax.swing.JFrame {
 	
 	public static void drawCard() {
 		//draws cards from the deck
+		card1 = deck1.pop();
+		card2 = deck2.pop();
+		
+		System.out.println("card1: " + card1);
+		System.out.println("card1 image: " + card1.getImage());
+		System.out.println("card2: " + card2 );
+		System.out.println("card2 image: " + card2.getImage());
 		
 	}
 	
