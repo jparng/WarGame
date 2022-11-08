@@ -9,7 +9,7 @@ import javax.swing.ImageIcon;
 public class Card {
 	    private int rank;
 	    private int suit;
-	    ImageIcon cardImage;
+	    String cardImage;
 	    
 	    private static String[] suits = {"clubs", "diamonds", "hearts", "spades"};
 	    public static final int CLUBS    = 0;
@@ -74,10 +74,9 @@ public class Card {
 	
 
 	    
-	    public ImageIcon getImage() throws IOException {
-	    	if(cardImage == null) {
-	    		cardImage = new ImageIcon("/Cards/" + rank + "_of_" + suit + ".png");
-	    	}
+	    public String getImage() throws IOException {
+	    	cardImage = "/Cards/" + ranks[rank] + "_of_" + suits[suit] + ".png";
+	
 			return cardImage;
 	    }
 	    
