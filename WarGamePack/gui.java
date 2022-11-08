@@ -195,13 +195,30 @@ public class gui {
 		draw.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//draws the cards
-				index.drawCard();
+				try {
+					index.drawCard();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				
 				spoilsDeck1.setVisible(true);
 				spoilsDeck2.setVisible(true);
+				
+				try {
+					activeCard1.setIcon(new ImageIcon(gui.class.getResource(index.card1.getImage().toString())));
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+				try {
+					activeCard2.setIcon(new ImageIcon(gui.class.getResource(index.card2.getImage().toString())));
+				} catch (IOException e2) {
+					e2.printStackTrace();
+				}
 				activeCard1.setVisible(true);
 				activeCard2.setVisible(true);
-
 			}
 		});
 		
