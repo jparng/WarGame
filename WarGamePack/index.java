@@ -1,14 +1,25 @@
 package WarGamePack;
 
+import java.io.IOException;
+import java.util.Collections;
+import java.util.LinkedList;
+
+
+
 
 public class index extends javax.swing.JFrame {
+	
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	public static LinkedList<Card> deck1 = new LinkedList<Card>();
 	public static LinkedList<Card> deck2 = new LinkedList<Card>();
 	public static LinkedList<Card> deck = new LinkedList<Card>();
 	static Card card1;
 	static Card card2;
-	
 	
 	cardNode head = null;
 	cardNode tail = null;
@@ -26,7 +37,7 @@ public class index extends javax.swing.JFrame {
 		}
 	}
 	
-	public void addAtEnd(int number, int suit) {
+	public void addNode(int number, int suit) {
 		cardNode newCard = new cardNode(number, suit);
 
 		if(head==null) {
@@ -42,10 +53,9 @@ public class index extends javax.swing.JFrame {
 			tail.next = null;
 		}
 	}
+		
 	
 	
-	
-
 	public class Player1{
 		
 	}
@@ -58,16 +68,13 @@ public class index extends javax.swing.JFrame {
 		
 	}
 	
-	
-	
-	
-
-	
-	public index() {
-		gui = new gui();
+	public class Draw{
+		
 	}
 	
-	
+
+
+
 	//Splits deck into 26 cards for Player 1
 	public static LinkedList<Card> firstDeck(LinkedList<Card> deck1, LinkedList<Card> fullDeck){
 		//takes 1st half of deck and adds to the Player 1's deck
@@ -86,7 +93,7 @@ public class index extends javax.swing.JFrame {
 	}
 	
 	//Initializes the full deck
-    	public static LinkedList<Card> newDeck(LinkedList<Card> deck) throws IOException {
+    public static LinkedList<Card> newDeck(LinkedList<Card> deck) throws IOException {
         // 4 suits
         for(int i = 0; i < 4; i++) {
         	//13 ranks
@@ -99,35 +106,34 @@ public class index extends javax.swing.JFrame {
 		return deck;
     }
 	
-	
-	
-	
-	
+
 	
 	
 	public static void startGame() {
 		
-	try {
-		newDeck(deck);
-		firstDeck(deck1, deck);
-		secondDeck(deck2, deck);
-	    } catch (IOException e) {
+		try {
+			newDeck(deck);
+			firstDeck(deck1, deck);
+			secondDeck(deck2, deck);
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
-		e.printStackTrace();
-	    	}
-	System.out.println("Deck: " + deck);
+			e.printStackTrace();
+		}
+		System.out.println("Deck: " + deck);
 		
-	System.out.println("deck1: " + deck1);
-	System.out.println("deck1 count: " + deck1.size());
+		System.out.println("deck1: " + deck1);
+		System.out.println("deck1 count: " + deck1.size());
 		
-	System.out.println("deck2: " + deck2);
-	System.out.println("deck2 count: " + deck2.size());
+		System.out.println("deck2: " + deck2);
+		System.out.println("deck2 count: " + deck2.size());
 		
 	}
 	
 	
-	public static void drawCard() {
-		//draws cards from the deck
+	
+	public static void drawCard() throws IOException {
+
+		
 		card1 = deck1.pop();
 		card2 = deck2.pop();
 		
@@ -135,6 +141,9 @@ public class index extends javax.swing.JFrame {
 		System.out.println("card1 image: " + card1.getImage());
 		System.out.println("card2: " + card2 );
 		System.out.println("card2 image: " + card2.getImage());
+		
+		gui.updateAll();
+		
 		
 	}
 	
@@ -147,13 +156,13 @@ public class index extends javax.swing.JFrame {
 		
 		System.out.println("deck1: " + deck1);
 		System.out.println("deck2: " + deck2);
-		System.out.println("full deck: " + deck);
-
+		System.out.println("full deck: " + deck.size());
+		
 	}
 	
 	
+	
 	public static void main(String args[]) {
-		
 		new gui();
 		
 	}
