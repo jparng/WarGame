@@ -2,11 +2,13 @@ package WarGamePack;
 
 
 import java.io.IOException;
+
+
 import javax.swing.ImageIcon;
 
 
 
-public class Card {
+public class Card{
 	    private int rank;
 	    private int suit;
 	    String cardImage;
@@ -36,6 +38,7 @@ public class Card {
 	            throw new IllegalArgumentException("invalid suit: " + suit);
 	        this.rank = rank;
 	        this.suit = suit;
+	        
 	    }
 	    
 	    /** Returns the suit of the card:
@@ -71,14 +74,15 @@ public class Card {
 	    public boolean equals(Card c) {
 	        return rank == c.rank && suit == c.suit;
 	    }
-	
-
+	    
+	    
 	    
 	    public String getImage() throws IOException {
 	    	cardImage = "/Cards/" + ranks[rank] + "_of_" + suits[suit] + ".png";
 	
 			return cardImage;
 	    }
+
 	    
 	}
 	
