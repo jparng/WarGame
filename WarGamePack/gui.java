@@ -1,6 +1,8 @@
 package WarGamePack;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
+
 import javax.swing.*;
 import java.lang.Object.*;
 import javax.sound.sampled.*;
@@ -49,11 +51,11 @@ public class gui {
 		mainDeck1.setVisible(false);
 		
 		JLabel title = new JLabel("Game of War!");
-		title.setForeground(new Color(0, 0, 0));
+		title.setForeground(new Color(255, 255, 255));
 		title.setBackground(new Color(255, 255, 255));
 		title.setHorizontalAlignment(SwingConstants.CENTER);
-		title.setFont(new Font("Arial", Font.PLAIN, 50));
-		title.setBounds(448, 82, 316, 59);
+		title.setFont(new Font("Arial", Font.BOLD, 50));
+		title.setBounds(419, 79, 422, 59);
 		panel.add(title);
 		panel.add(resetBut);
 
@@ -105,6 +107,30 @@ public class gui {
 		activeCard2.setBounds(680, 169, 231, 329);
 		panel.add(activeCard2);
 		activeCard2.setVisible(false);
+		
+		JLabel deckCount1 = new JLabel("1P Deck: ");
+		deckCount1.setForeground(new Color(255, 255, 255));
+		deckCount1.setFont(new Font("Tahoma", Font.BOLD, 24));
+		deckCount1.setBounds(175, 472, 156, 47);
+		panel.add(deckCount1);
+		
+		JLabel deckCount2 = new JLabel("2P Deck: ");
+		deckCount2.setForeground(new Color(255, 255, 255));
+		deckCount2.setFont(new Font("Tahoma", Font.BOLD, 24));
+		deckCount2.setBounds(933, 469, 160, 52);
+		panel.add(deckCount2);
+		
+		JLabel spoilsCount1 = new JLabel("Spoils: ");
+		spoilsCount1.setForeground(new Color(255, 255, 255));
+		spoilsCount1.setFont(new Font("Tahoma", Font.BOLD, 20));
+		spoilsCount1.setBounds(21, 437, 138, 61);
+		panel.add(spoilsCount1);
+		
+		JLabel spoilsCount2 = new JLabel("Spoils: ");
+		spoilsCount2.setForeground(new Color(255, 255, 255));
+		spoilsCount2.setFont(new Font("Tahoma", Font.BOLD, 20));
+		spoilsCount2.setBounds(1115, 442, 138, 51);
+		panel.add(spoilsCount2);
 		
 		JLabel backGround2 = new JLabel("");
 		backGround2.setIcon(new ImageIcon(gui.class.getResource("/Backgrounds/bg_1play.jpg")));
@@ -231,6 +257,9 @@ public class gui {
 	public static void updateAll() {
 		// TODO Auto-generated method stub
 		
+		
+		
 	}
 }
+
 
