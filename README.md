@@ -38,4 +38,7 @@ Scope Statement/Ideas: https://docs.google.com/document/d/1RGqWkIkoDaJFebfCT9eya
 
 ![image](https://user-images.githubusercontent.com/59073672/199155040-05ed70b8-fa22-4056-9aaf-65017a03ffbe.png)
 
+# Card Images Implemented
+
+![image](https://user-images.githubusercontent.com/59073672/200912990-2a9b3441-f1e5-4931-8224-2b1ebb61d81c.png)
 
