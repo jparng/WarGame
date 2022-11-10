@@ -145,7 +145,9 @@ public class index extends javax.swing.JFrame {
 		System.out.println("card1 image: " + card1.getImage());
 		System.out.println("card2: " + card2 );
 		System.out.println("card2 image: " + card2.getImage());
-		System.out.println("Test = " + test);
+		System.out.println("Outcome = " + outcome);
+		System.out.println("Spoils1 count: " + spoils1.size());
+		System.out.println("Spoils2 count: " + spoils2.size());
 		
 		gui.updateAll();
 		
