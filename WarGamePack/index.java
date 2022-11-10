@@ -18,10 +18,12 @@ public class index extends javax.swing.JFrame {
 	public static LinkedList<Card> deck1 = new LinkedList<Card>();
 	public static LinkedList<Card> deck2 = new LinkedList<Card>();
 	public static LinkedList<Card> deck = new LinkedList<Card>();
+	public static LinkedList<Card> spoils1 = new LinkedList<Card>();
+	public static LinkedList<Card> spoils2 = new LinkedList<Card>();
 	static Card card1;
 	static Card card2;
 	
-	cardNode head = null;
+	/*cardNode head = null;
 	cardNode tail = null;
 	
 	class cardNode {
@@ -52,7 +54,7 @@ public class index extends javax.swing.JFrame {
 			tail = newCard;
 			tail.next = null;
 		}
-	}
+	}*/
 		
 	
 	
@@ -137,12 +139,29 @@ public class index extends javax.swing.JFrame {
 		card1 = deck1.pop();
 		card2 = deck2.pop();
 		
+		int outcome = card1.compareRank(card2);
+		
 		System.out.println("card1: " + card1);
 		System.out.println("card1 image: " + card1.getImage());
 		System.out.println("card2: " + card2 );
 		System.out.println("card2 image: " + card2.getImage());
+		System.out.println("Test = " + test);
 		
 		gui.updateAll();
+		
+		
+		if (outcome > 0) {
+			System.out.println("Player 1 wins!");
+			spoils1.add(card1);
+			spoils1.add(card2);
+		} else if (outcome < 0) {
+			System.out.println("Player 2 wins!");
+			spoils2.add(card1);
+			spoils2.add(card2);
+			
+		} /*else {
+			war;
+		}*/
 		
 		
 	}
