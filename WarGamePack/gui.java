@@ -1,6 +1,7 @@
 package WarGamePack;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
 import java.io.IOException;
 
 import javax.swing.*;
@@ -67,6 +68,7 @@ public class gui {
 		frame.setTitle("Card Game of War");
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().add(panel);
+		
 		JButton draw = new JButton("Draw");
 		draw.setBounds(533, 524, 177, 82);
 		draw.setVisible(false);
@@ -108,29 +110,47 @@ public class gui {
 		panel.add(activeCard2);
 		activeCard2.setVisible(false);
 		
-		JLabel deckCount1 = new JLabel("1P Deck: ");
+		JLabel deckCount1 = new JLabel("Deck: 0");
 		deckCount1.setForeground(new Color(255, 255, 255));
 		deckCount1.setFont(new Font("Tahoma", Font.BOLD, 24));
 		deckCount1.setBounds(175, 472, 156, 47);
 		panel.add(deckCount1);
+		deckCount1.setVisible(false);
 		
-		JLabel deckCount2 = new JLabel("2P Deck: ");
+		JLabel deckCount2 = new JLabel("Deck: 0");
 		deckCount2.setForeground(new Color(255, 255, 255));
 		deckCount2.setFont(new Font("Tahoma", Font.BOLD, 24));
-		deckCount2.setBounds(933, 469, 160, 52);
+		deckCount2.setBounds(945, 469, 160, 52);
 		panel.add(deckCount2);
+		deckCount2.setVisible(false);
 		
-		JLabel spoilsCount1 = new JLabel("Spoils: ");
+		JLabel spoilsCount1 = new JLabel("Spoils: " + index.spoils1.size());
 		spoilsCount1.setForeground(new Color(255, 255, 255));
 		spoilsCount1.setFont(new Font("Tahoma", Font.BOLD, 20));
 		spoilsCount1.setBounds(21, 437, 138, 61);
 		panel.add(spoilsCount1);
+		spoilsCount1.setVisible(false);
 		
-		JLabel spoilsCount2 = new JLabel("Spoils: ");
+		JLabel spoilsCount2 = new JLabel("Spoils: " + index.spoils2.size());
 		spoilsCount2.setForeground(new Color(255, 255, 255));
 		spoilsCount2.setFont(new Font("Tahoma", Font.BOLD, 20));
 		spoilsCount2.setBounds(1115, 442, 138, 51);
 		panel.add(spoilsCount2);
+		spoilsCount2.setVisible(false);
+		
+		JLabel tiePool1 = new JLabel("Tie Pool: ");
+		tiePool1.setForeground(new Color(255, 255, 255));
+		tiePool1.setFont(new Font("Arial", Font.BOLD, 20));
+		tiePool1.setBounds(356, 585, 123, 59);
+		panel.add(tiePool1);
+		tiePool1.setVisible(false);
+		
+		JLabel tiePool2 = new JLabel("Tie Pool: ");
+		tiePool2.setForeground(new Color(255, 255, 255));
+		tiePool2.setFont(new Font("Arial", Font.BOLD, 20));
+		tiePool2.setBounds(760, 585, 109, 59);
+		panel.add(tiePool2);
+		tiePool2.setVisible(false);
 		
 		JLabel backGround2 = new JLabel("");
 		backGround2.setIcon(new ImageIcon(gui.class.getResource("/Backgrounds/bg_1play.jpg")));
@@ -167,6 +187,12 @@ public class gui {
 				backGround2.setVisible(true);
 				mainDeck1.setVisible(true);
 				mainDeck2.setVisible(true);
+				deckCount1.setVisible(true);
+				deckCount2.setVisible(true);
+				spoilsCount1.setVisible(true);
+				spoilsCount2.setVisible(true);
+				tiePool1.setVisible(true);
+				tiePool2.setVisible(true);
 				
 				index.startGame();
 				
@@ -187,6 +213,12 @@ public class gui {
 				backGround3.setVisible(true);
 				mainDeck1.setVisible(true);
 				mainDeck2.setVisible(true);
+				deckCount1.setVisible(true);
+				deckCount2.setVisible(true);
+				spoilsCount1.setVisible(true);
+				spoilsCount2.setVisible(true);
+				tiePool1.setVisible(true);
+				tiePool2.setVisible(true);
 				
 				index.startGame();
 			}
@@ -198,6 +230,8 @@ public class gui {
 		//Resets all buttons and title 
 		resetBut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				index.reset();
+				
 				firstButton.setVisible(true);
 				secondButton.setVisible(true);
 				title.setVisible(true);
@@ -212,9 +246,21 @@ public class gui {
 				spoilsDeck2.setVisible(false);
 				activeCard1.setVisible(false);
 				activeCard2.setVisible(false);
+				deckCount1.setVisible(false);
+				deckCount2.setVisible(false);
+				spoilsCount1.setVisible(false);
+				spoilsCount2.setVisible(false);
+				tiePool1.setVisible(false);
+				tiePool2.setVisible(false);
+				
+				deckCount1.setText("Deck: " + index.deck1.size());
+				deckCount2.setText("Deck: " + index.deck2.size());
+				spoilsCount1.setText("Spoils: " + index.spoils1.size());
+				spoilsCount2.setText("Spoils: " + index.spoils2.size());
+				tiePool1.setText("Tie Pool: " + index.tie1.size());
+				tiePool2.setText("Tie Pool: " + index.tie2.size());
 				
 				
-				index.Reset();
 			}
 		});
 		
@@ -228,8 +274,17 @@ public class gui {
 					e1.printStackTrace();
 				}
 				
-				spoilsDeck1.setVisible(true);
-				spoilsDeck2.setVisible(true);
+				if(index.spoils1.size() > 0 ) {
+					spoilsDeck1.setVisible(true);
+				}else if(index.spoils1.size() == 0) {
+					spoilsDeck1.setVisible(false);
+				}
+				if (index.spoils2.size() > 0) {
+					spoilsDeck2.setVisible(true);
+				}else if(index.spoils2.size() == 0) {
+					spoilsDeck2.setVisible(false);
+				}
+				
 				
 				try {
 					activeCard1.setIcon(new ImageIcon(gui.class.getResource(index.card1.getImage().toString())));
@@ -243,23 +298,27 @@ public class gui {
 				} catch (IOException e2) {
 					e2.printStackTrace();
 				}
+				
+				deckCount1.setText("Deck: " + index.deck1.size());
+				deckCount2.setText("Deck: " + index.deck2.size());
+				spoilsCount1.setText("Spoils: " + index.spoils1.size());
+				spoilsCount2.setText("Spoils: " + index.spoils2.size());
+				tiePool1.setText("Tie Pool: " + index.tie1.size());
+				tiePool2.setText("Tie Pool: " + index.tie2.size());
+				
 				activeCard1.setVisible(true);
 				activeCard2.setVisible(true);
 			}
 		});
 		
-		
+
 			
 	}
 	
+	
+	
 
 
-	public static void updateAll() {
-		// TODO Auto-generated method stub
-		
-		
-		
-	}
+
 }
-
 
