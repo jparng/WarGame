@@ -13,6 +13,26 @@ Game of War card game
 
 Drafts/Documentation : https://docs.google.com/document/d/1Xm4xP4JERc0tksHb2V_Lq_JcaLcC6sVMxiI7XfCdvZk/edit?usp=sharing
 
+Project Plan
+  -Org Chart
+  -Gantt Chart
+  -Tools and Standards
+  -Configuration Management Plan
+
+Programmer’s Manual
+  -Requirements Documentation
+  -Introduction
+  -General description
+  -Specific requirements
+  -Design Documentation
+  -Source Code Documentation
+  -Testing Documentation
+  -Bugs and issues
+User Documentation
+  -User’s Manual
+  -Installation Instructions
+
+
 Scope Statement/Ideas: https://docs.google.com/document/d/1RGqWkIkoDaJFebfCT9eyadPfOhR0wz3XQD8X0En-K1o/edit?usp=sharing
 
 
