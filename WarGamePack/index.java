@@ -11,6 +11,7 @@ import javax.sound.sampled.*;
 
 
 
+@SuppressWarnings("unused")
 public class index extends javax.swing.JFrame {
 
 	/**
@@ -28,7 +29,7 @@ public class index extends javax.swing.JFrame {
 	public static Card card1;
 	public static Card card2;
 	public static int result;
-	
+	static Sound sound = new Sound();
 
 	
 
@@ -77,12 +78,6 @@ public class index extends javax.swing.JFrame {
 			firstDeck(deck1, deck);
 			secondDeck(deck2, deck);
 			
-//			deck1.add(new Card(Card.ACE, Card.SPADES));
-//			deck1.add(new Card(Card.KING, Card.DIAMONDS));
-//			deck1.add(new Card(Card.JACK, Card.HEARTS));
-//			deck2.add(new Card(Card.ACE, Card.CLUBS));
-//			deck2.add(new Card(Card.QUEEN, Card.SPADES));
-//			deck2.add(new Card(Card.QUEEN, Card.DIAMONDS));
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -178,6 +173,7 @@ public class index extends javax.swing.JFrame {
 		
 		if (outcome > 0) {
 			System.out.println("Player 1 wins!");
+			sound.winHand();
 			spoils1.add(card1);
 			spoils1.add(card2);
 			if(tie1.size() > 0) {
@@ -192,6 +188,7 @@ public class index extends javax.swing.JFrame {
 			}
 		} else if (outcome < 0) {
 			System.out.println("Player 2 wins!");
+			sound.loseHand();
 			spoils2.add(card1);
 			spoils2.add(card2);
 			if(tie2.size() > 0) {
@@ -210,8 +207,7 @@ public class index extends javax.swing.JFrame {
 			tie(deck1, deck2, spoils1, spoils2,tie1, tie2, card1, card2);
 		}
 	}
-
-
+	
 	
 	
 	public static void reset() {
@@ -228,6 +224,11 @@ public class index extends javax.swing.JFrame {
 		System.out.println("full deck: " + deck.size());
 		
 	}
+	
+
+	
+	
+	
 	
 	
 	
