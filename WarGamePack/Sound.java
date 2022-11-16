@@ -16,10 +16,10 @@ public class Sound {
 	
 	public Sound() {
 		
-		winHand = ".//Sound_Effects/Win.ogg";
-		winGame = ".//Sound_Effects/GameWon.ogg";
+		winHand = ".//Sound_Effects/winHand.wav";
+		winGame = ".//Sound_Effects/GameWon.wav";
 		shuffle = ".//Sound_Effects/shuffle.wav";
-		drawCard = ".//Sound_Effects/card_snd1.wav";
+		drawCard = ".//Sound_Effects/card.wav";
 	}
 	
 public class SoundEffect {
@@ -47,12 +47,12 @@ public class SoundEffect {
 		}
 	}
 	
-	public class ButtonHandler implements ActionListener {
-		public void actionPerformed(ActionEvent event) {
-			se.setFile(shuffle);
-			se.play();
-		}
-	}
+	//public class ButtonHandler implements ActionListener {
+	//	public void actionPerformed(ActionEvent event) {
+	//		se.setFile(shuffle);
+	//		se.play();
+	//	}
+	//}
 	
 
 }
