@@ -16,10 +16,10 @@ public class Sound {
 	
 	public Sound() {
 		
-		winHand = ".//Sound_Effects/winHand.wav";
-		winGame = ".//Sound_Effects/GameWon.wav";
-		shuffle = ".//Sound_Effects/shuffle.wav";
-		drawCard = ".//Sound_Effects/card.wav";
+		winHand = ".//Sound_Effects//winHand.wav";
+		winGame = ".//Sound_Effects//GameWon.wav";
+		shuffle = ".//Sound_Effects//shuffle.wav";
+		drawCard = ".//Sound_Effects//card.wav";
 	}
 	
 public class SoundEffect {
