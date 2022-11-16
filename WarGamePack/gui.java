@@ -9,10 +9,12 @@ import java.lang.Object.*;
 import javax.sound.sampled.*;
 
 
+@SuppressWarnings("unused")
 public class gui {
 	
 	public gui() {
 		
+		Sound sound = new Sound();
 		
 		JFrame frame = new JFrame();
 		frame.setResizable(false);
@@ -195,6 +197,7 @@ public class gui {
 				tiePool2.setVisible(true);
 				
 				index.startGame();
+				sound.shuffle();
 				
 			}
 		});
@@ -221,6 +224,8 @@ public class gui {
 				tiePool2.setVisible(true);
 				
 				index.startGame();
+				sound.shuffle();
+				
 			}
 		});
 		
@@ -274,6 +279,9 @@ public class gui {
 					e1.printStackTrace();
 				}
 				
+				sound.draw();
+				
+				
 				if(index.spoils1.size() > 0 ) {
 					spoilsDeck1.setVisible(true);
 				}else if(index.spoils1.size() == 0) {
@@ -314,11 +322,6 @@ public class gui {
 
 			
 	}
-	
-	
-	
-
-
-
 }
+
 
