@@ -1,17 +1,14 @@
 package WarGamePack;
 
-import java.io.File;
+
 import java.io.IOException;
-import java.net.URL;
 import java.util.Collections;
 import java.util.LinkedList;
 
-import javax.sound.sampled.*;
 
 
 
 
-@SuppressWarnings("unused")
 public class index extends javax.swing.JFrame {
 
 	/**
@@ -24,8 +21,7 @@ public class index extends javax.swing.JFrame {
 	public static LinkedList<Card> deck = new LinkedList<Card>();
 	public static LinkedList<Card> spoils1 = new LinkedList<Card>();
 	public static LinkedList<Card> spoils2 = new LinkedList<Card>();
-	public static LinkedList<Card> tie1 = new LinkedList<Card>();
-	public static LinkedList<Card> tie2 = new LinkedList<Card>();
+	public static LinkedList<Card> tie = new LinkedList<Card>();
 	public static Card card1;
 	public static Card card2;
 	public static int result;
@@ -39,7 +35,7 @@ public class index extends javax.swing.JFrame {
         // 4 suits
         for(int i = 0; i < 4; i++) {
         	//13 ranks
-        	for(int j = 2; j <= 14; j++) {
+        	for(int j = 1; j <= 13; j++) {
         		deck.add(new Card(j, i));
         	}
         }
@@ -77,7 +73,14 @@ public class index extends javax.swing.JFrame {
 			newDeck(deck);
 			firstDeck(deck1, deck);
 			secondDeck(deck2, deck);
-			
+//			deck2.add(new Card(Card.ACE,Card.SPADES));
+//			deck2.add(new Card(Card.ACE,Card.HEARTS));
+//			deck1.add(new Card(Card.ACE,Card.DIAMONDS));
+//			deck1.add(new Card(Card.KING, Card.DIAMONDS));
+//			deck1.add(new Card(Card.ACE, Card.DIAMONDS));
+//			deck1.add(new Card(Card.KING, Card.HEARTS));
+
+			sound.stop();
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -96,15 +99,16 @@ public class index extends javax.swing.JFrame {
 	}
 	
 	public static void refreshCards(LinkedList<Card> deck1, LinkedList<Card> deck2) {
-		if(deck1.size() == 0) {
+		//If active decks are empty, add all cards from the spoils deck to the active decks
+		
+		if(deck1.size() == 0 && spoils1.size() > 0) {
 			for(int i = 0; i < spoils1.size(); i++) {
 				deck1.add(spoils1.get(i));
 			}
 			spoils1.clear();
 			Collections.shuffle(deck1);
-		}
-		
-		if(deck2.size() == 0) {
+		} 	
+		if(deck2.size() == 0 && spoils2.size() > 0) {
 			for(int i = 0; i < spoils2.size(); i++) {
 				deck2.add(spoils2.get(i));
 			}
@@ -117,97 +121,102 @@ public class index extends javax.swing.JFrame {
 	
 	public static void drawCard() throws IOException {
 		refreshCards(deck1, deck2);
-		card1 = deck1.pop();
-		card2 = deck2.pop();
-
-		
+		if(deck1.size() > 0 && deck2.size() > 0) {
+			card1 = deck1.pop();
+			card2 = deck2.pop();
+			
+			checkCard(card1, card2, deck1, deck2, spoils1, spoils2, tie, result);
+		}
 		System.out.println("card1: " + card1);
-		System.out.println("card1 image: " + card1.getImage());
 		System.out.println("card2: " + card2 );
-		System.out.println("card2 image: " + card2.getImage());
-		
 
-		checkCard(card1, card2, deck1, deck2, spoils1, spoils2, tie1, tie2, result);
-		System.out.println("Outcome = " + result);
-		System.out.println("Spoils1 count: " + spoils1.size());
-		System.out.println("Spoils1 deck: " + spoils1);
-		System.out.println("Spoils2 count: " + spoils2.size());
-		System.out.println("Spoils2 deck: " + spoils2);
-		System.out.println("deck1: " + deck1);
-		System.out.println("deck1 count: " + deck1.size());
-		
-		System.out.println("deck2: " + deck2);
-		System.out.println("deck2 count: " + deck2.size());
-		
-		
-		
-		
 		
 	}
 	
-	public static void tie( LinkedList<Card> deck1, LinkedList<Card>deck2, LinkedList<Card> spoils1, LinkedList<Card> spoils2, LinkedList<Card> tie1, LinkedList<Card> tie2, Card c1, Card c2) {
+	public static void tie( LinkedList<Card> deck1, LinkedList<Card>deck2, LinkedList<Card> spoils1, LinkedList<Card> spoils2, LinkedList<Card> tie, Card c1, Card c2) {
 		//in the event of a tie, have draw one card and place it into the tie pool, then draw again and compare the ranks to see which card is higher, then move those cards to winner's deck
-		
 		refreshCards(deck1, deck2);
-		Card temp = deck1.pop();
-		Card temp2 = deck2.pop();
-		System.out.println("deck1 size: " + deck1.size());
-		System.out.println("deck2 size: " + deck2.size());
-		tie1.add(c1);
-		tie2.add(c2);
-		tie1.add(temp);
-		tie2.add(temp2);
+		if(deck1.size() > 0 && deck2.size() > 0) {
+			Card temp = deck1.pop();
+			Card temp2 = deck2.pop();
+			tie.add(c1);
+			tie.add(c2);
+			tie.add(temp);
+			tie.add(temp2);
+			
+		} else if(deck1.size() == 0) {
+			Card temp = deck2.pop();
+			tie.add(c2);
+			tie.add(temp);
+			System.out.println("Player 1 ran out of cards.");
+		}
+		else if(deck2.size() == 0) {
+			Card temp = deck1.pop();
+			tie.add(c1);
+			tie.add(temp);
+			System.out.println("CPU ran out of cards.");
+		}
+
 		
-		System.out.println("Tie pool1: " + tie1.size());
-		System.out.println("Tie pool2: " + tie2.size());
-		System.out.println("Tie deck1: " + tie1);
-		System.out.println("Tie deck2: " + tie2);
+		System.out.println("Tie deck: " + tie);
+
 		
 	}
 	
 	
-	public static void checkCard(Card card1, Card card2,LinkedList<Card> deck1, LinkedList<Card> deck2, LinkedList<Card> spoils1, LinkedList<Card> spoils2, LinkedList<Card> tie1, LinkedList<Card> tie2, int outcome) {
+	public static void checkCard(Card card1, Card card2,LinkedList<Card> deck1, LinkedList<Card> deck2, LinkedList<Card> spoils1, LinkedList<Card> spoils2, LinkedList<Card> tie, int outcome) {
 		//d1 = popped card from Deck1, d2 = popped card from Deck2
 		
 		outcome = card1.compareRank(card2);
 		
 		if (outcome > 0) {
-			System.out.println("Player 1 wins!");
 			sound.winHand();
 			spoils1.add(card1);
 			spoils1.add(card2);
-			if(tie1.size() > 0) {
-				for(int i = 0; i <= tie1.size() - 1; i++) {
-					spoils1.add(tie1.get(i));
+			
+			if(tie.size() > 0) {
+				for(int i = 0; i <= tie.size() - 1; i++) {
+					spoils1.add(tie.get(i));
 					}
-				for(int i = 0; i <= tie2.size() - 1; i++) {
-					spoils1.add(tie2.get(i));
-				}
-			tie1.clear();
-			tie2.clear();
+
+			tie.clear();
+
+			
 			}
+			System.out.println("Player 1 wins! " + "Card total increased to " + spoils1.size());
 		} else if (outcome < 0) {
-			System.out.println("Player 2 wins!");
 			sound.loseHand();
 			spoils2.add(card1);
 			spoils2.add(card2);
-			if(tie2.size() > 0) {
-				for(int i = 0; i <= tie1.size() - 1; i++) {
-					spoils2.add(tie1.get(i));
+			
+			if(tie.size() > 0) {
+				for(int i = 0; i <= tie.size() - 1; i++) {
+					spoils2.add(tie.get(i));
 					}
-				for(int i = 0; i <= tie2.size() - 1; i++) {
-					spoils2.add(tie2.get(i));
-				}
-			tie1.clear();
-			tie2.clear();
+
+			tie.clear();
+			
 			}
-				
+			System.out.println("Player 2 wins! " + "Card total increased to " + spoils2.size());
 		}else {
 			System.out.println("Tie has occurred, one extra card has been added to spoils. draw again");
-			tie(deck1, deck2, spoils1, spoils2,tie1, tie2, card1, card2);
+			
+			tie(deck1, deck2, spoils1, spoils2,tie, card1, card2);
 		}
 	}
 	
+	public static int checkGame() {
+		//Player 1 loses
+		if(deck1.size() == 0 && spoils1.size() == 0) {
+			sound.loseGame();
+			return 1;
+		//Player 1 wins
+		}else if(deck2.size() == 0 && spoils2.size() == 0) {
+			sound.winGame();
+			return 2;
+		}
+		return 0;
+	}
 	
 	
 	public static void reset() {
@@ -217,7 +226,7 @@ public class index extends javax.swing.JFrame {
 		deck2.clear();
 		spoils1.clear();
 		spoils2.clear();
-		
+		sound.playMusic();
 		
 		System.out.println("deck1: " + deck1);
 		System.out.println("deck2: " + deck2);
@@ -229,11 +238,9 @@ public class index extends javax.swing.JFrame {
 	
 	
 	
-	
-	
-	
 	public static void main(String args[]) {
 		new gui();
+		sound.playMusic();
 		
 	}
 }
