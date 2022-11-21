@@ -227,6 +227,7 @@ public class index extends javax.swing.JFrame {
 		spoils1.clear();
 		spoils2.clear();
 		sound.playMusic();
+		tie.clear();
 		
 		System.out.println("deck1: " + deck1);
 		System.out.println("deck2: " + deck2);
