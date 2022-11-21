@@ -28,8 +28,8 @@ public class gui {
 		panel.setLayout(null);
 		
 		JTextArea instructions = new JTextArea();
-		instructions.setForeground(new Color(0, 0, 0));
-		instructions.setBackground(new Color(192, 192, 192));
+		instructions.setForeground(new Color(255, 255, 255));
+		instructions.setBackground(new Color(0, 128, 64));
 		instructions.setEditable(false);
 		instructions.setFont(new Font("Arial", Font.BOLD, 18));
 		instructions.setWrapStyleWord(true);
@@ -394,5 +394,6 @@ public class gui {
 			
 	}
 }
+
 
 
