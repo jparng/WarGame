@@ -19,12 +19,12 @@ public class Card{
 	    public static final int HEARTS   = 2;
 	    public static final int SPADES   = 3;
 	    
-	    private static String[] ranks = {null, "ace", "2", "3", "4", "5", "6", "7", "8", 
-	                                     "9", "10", "jack", "queen", "king"}; //changed ranking to 
+	    private static String[] ranks = {null, null, "2", "3", "4", "5", "6", "7", "8", 
+	                                     "9", "10", "jack", "queen", "king", "ace"};
 	    public static final int JACK  = 11;
 	    public static final int QUEEN = 12;
 	    public static final int KING  = 13;
-	    public static final int ACE   = 1; //changed ACE value from 14 to 1
+	    public static final int ACE   = 14;
 	    
 	    /** Constructor
 	      * rank can be 2, 3, ..., 10, JACK, QUEEN, KING, ACE
@@ -32,7 +32,7 @@ public class Card{
 	     * @throws IOException 
 	      */
 	    public Card (int rank, int suit) throws IOException {
-	        if (rank < ACE || rank > KING) //changed from if < 2 or > A to if <A or >K
+	        if (rank < 2 || rank > ACE)
 	            throw new IllegalArgumentException("invalid rank: " + rank);
 	        if (suit < 0 || suit > 3)
 	            throw new IllegalArgumentException("invalid suit: " + suit);
