@@ -4,8 +4,6 @@ package WarGamePack;
 import java.io.IOException;
 
 
-import javax.swing.ImageIcon;
-
 
 
 public class Card{
@@ -19,12 +17,12 @@ public class Card{
 	    public static final int HEARTS   = 2;
 	    public static final int SPADES   = 3;
 	    
-	    private static String[] ranks = {null, null, "2", "3", "4", "5", "6", "7", "8", 
-	                                     "9", "10", "jack", "queen", "king", "ace"};
+	    private static String[] ranks = {null, "ace", "2", "3", "4", "5", "6", "7", "8", 
+	                                     "9", "10", "jack", "queen", "king"};
 	    public static final int JACK  = 11;
 	    public static final int QUEEN = 12;
 	    public static final int KING  = 13;
-	    public static final int ACE   = 14;
+	    public static final int ACE   = 1;
 	    
 	    /** Constructor
 	      * rank can be 2, 3, ..., 10, JACK, QUEEN, KING, ACE
@@ -32,7 +30,7 @@ public class Card{
 	     * @throws IOException 
 	      */
 	    public Card (int rank, int suit) throws IOException {
-	        if (rank < 2 || rank > ACE)
+	        if (rank < ACE || rank > KING)
 	            throw new IllegalArgumentException("invalid rank: " + rank);
 	        if (suit < 0 || suit > 3)
 	            throw new IllegalArgumentException("invalid suit: " + suit);
@@ -86,4 +84,3 @@ public class Card{
 	    
 	}
 	
-
