@@ -183,7 +183,7 @@ public class index extends javax.swing.JFrame {
 
 			
 			}
-			System.out.println("Player 1 wins! " + "Card total increased to " + spoils1.size());
+			System.out.println("Player 1 wins! " + "P1's card total increased to " + spoils1.size());
 		} else if (outcome < 0) {
 			sound.loseHand();
 			spoils2.add(card1);
@@ -197,7 +197,7 @@ public class index extends javax.swing.JFrame {
 			tie.clear();
 			
 			}
-			System.out.println("Player 2 wins! " + "Card total increased to " + spoils2.size());
+			System.out.println("Player 2 wins! " + "P2's card total increased to " + spoils2.size());
 		}else {
 			System.out.println("Tie has occurred, one extra card has been added to spoils. draw again");
 			
