@@ -21,7 +21,7 @@ public class Sound {
 	Clip clip;
 	
 	public Sound() {
-		
+		warMusic = getClass().getResource("/Sound_Effects/warMusic.wav");
 		winHand = getClass().getResource("/Sound_Effects/winHand.wav");
 		winGame = getClass().getResource("/Sound_Effects/GameWon.wav");
 		shuffle = getClass().getResource("/Sound_Effects/shuffle.wav");
@@ -64,6 +64,19 @@ public class Sound {
 		public void loseHand() {
 			setFile(loseHand);
 			play();
+		}
+			 //Plays music during the title screen of the game (Requirement 3.1.0)
+		public void playMusic() {
+			setFile(warMusic);
+			FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+			gainControl.setValue(-10.0f);
+			play();
+			loop();
+		}
+		//Stops the sound effect or music (Requirement 3.1.0)
+
+		public void stop() {
+			clip.stop();
 		}
 
 }
