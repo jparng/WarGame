@@ -19,7 +19,8 @@ Project Plan
   -Tools and Standards
   -Configuration Management Plan
 
-Programmer’s Manual
+Programmer’s Manual: [Programmer's Manual.pdf](https://github.com/jparng/WarGame/files/10108920/Programmer.s.Manual.pdf)
+
   -Requirements Documentation
   -Introduction
   -General description
