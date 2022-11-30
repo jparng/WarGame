@@ -11,8 +11,6 @@ Game of War card game
 
 # Documentation
 
-Drafts/Documentation : https://docs.google.com/document/d/1Xm4xP4JERc0tksHb2V_Lq_JcaLcC6sVMxiI7XfCdvZk/edit?usp=sharing
-
 Project Plan
   -Org Chart
   -Gantt Chart
@@ -33,8 +31,6 @@ User Documentation
   -User’s Manual
   -Installation Instructions
 
-
-Scope Statement/Ideas: https://docs.google.com/document/d/1RGqWkIkoDaJFebfCT9eyadPfOhR0wz3XQD8X0En-K1o/edit?usp=sharing
 
 
 # Start of the game
