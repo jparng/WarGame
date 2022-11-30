@@ -19,7 +19,7 @@ Project Plan
 
 Programmer’s Manual: [Programmer's Manual.pdf](https://github.com/jparng/WarGame/files/10108920/Programmer.s.Manual.pdf)
 
-User Documentation
+User Documentation : https://github.com/jparng/WarGame/blob/main/User's%20Manual.docx.pdf
 
 
 
