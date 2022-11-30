@@ -19,17 +19,7 @@ Project Plan
 
 Programmer’s Manual: [Programmer's Manual.pdf](https://github.com/jparng/WarGame/files/10108920/Programmer.s.Manual.pdf)
 
-  -Requirements Documentation
-  -Introduction
-  -General description
-  -Specific requirements
-  -Design Documentation
-  -Source Code Documentation
-  -Testing Documentation
-  -Bugs and issues
 User Documentation
-  -User’s Manual
-  -Installation Instructions
 
 
 
