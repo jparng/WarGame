@@ -23,7 +23,7 @@ User Documentation : https://github.com/jparng/WarGame/blob/main/User's%20Manual
 
 
 
-# Start of the game
+# Developing the Start of the game
 
 ![image](https://user-images.githubusercontent.com/59073672/194780583-c417ae34-c385-48e9-b09c-4f049f943709.png)
 
