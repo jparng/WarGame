@@ -32,10 +32,6 @@ User Documentation : https://github.com/jparng/WarGame/blob/main/User's%20Manual
 
 ![image](https://user-images.githubusercontent.com/59073672/194977049-8140e356-45b6-4fd7-a880-34678170befd.png)
 
-# Player 2 button is clicked
-
-![image](https://user-images.githubusercontent.com/59073672/194977103-8f1c6114-1cad-480d-9b63-e50eb9bdb95e.png)
-
 
 # Updated Interface
 
