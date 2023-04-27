@@ -1,5 +1,5 @@
 # WarGame
-Game of War card game
+Game of War card game developed by a team of 3 following a software development lifecycle.
 
 # Scope Statement
 
